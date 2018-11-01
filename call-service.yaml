@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: call
+spec:
+  replicas: 1
+  minReadySeconds: 15
+  template:
+    metadata:
+      labels:
+        app: call
+    spec:
+      containers:
+      - image: rinormaloku/call
+        imagePullPolicy: Always
+        name: call
+        env:
+          - name: HTTPBIN_URL
+            value: "http://httpbin"
+        ports:
+          - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: call
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: call
