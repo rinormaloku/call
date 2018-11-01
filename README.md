@@ -10,4 +10,4 @@ The Call service has one endpoint `/call` which:
 }
 ```
 
-URL to the httpbin service is defined using the HTTPBIN_URL environment variable in the deployment for [Call Service](./call-service)
+URL to the httpbin service is defined using the HTTPBIN_URL environment variable in the deployment for [Call Service](./call-service.yaml)
