@@ -4,15 +4,15 @@ metadata:
   name: external-facing-services
 spec:
   hosts:
-  - "*"
+    - "*"
   gateways:
-  - http-gateway
+    - http-gateway
   http:
-  - match:
-    - uri:
-      prefix: "/call"
-    route:
-    - destination:
-      host: call
-      port:
-        number: 80
+    - match:
+        - uri:
+            prefix: "/call"
+      route:
+        - destination:
+            host: call
+            port:
+              number: 80
