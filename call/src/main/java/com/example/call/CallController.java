@@ -20,7 +20,7 @@ public class CallController {
     }
 
     @GetMapping("/call")
-    public String sentimentAnalysis() {
+    public String call() {
         return restTemplate.getForObject(httpbinUrl + "/ip", String.class);
     }
 }
